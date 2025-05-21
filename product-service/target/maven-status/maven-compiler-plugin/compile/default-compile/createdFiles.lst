@@ -1,0 +1,8 @@
+com\backendguru\product\ProductEntity.class
+com\backendguru\product\ProductService.class
+com\backendguru\product\ProductApplication.class
+com\backendguru\product\ProductRepository.class
+com\backendguru\product\ProductController.class
+com\backendguru\product\ProductEntity$ProductEntityBuilder.class
+com\backendguru\product\NewProductRequest.class
+com\backendguru\product\ProductResponse.class
