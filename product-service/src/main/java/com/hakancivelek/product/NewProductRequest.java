@@ -1,4 +1,4 @@
-package com.backendguru.product;
+package com.hakancivelek.product;
 
 import java.math.BigDecimal;
 
