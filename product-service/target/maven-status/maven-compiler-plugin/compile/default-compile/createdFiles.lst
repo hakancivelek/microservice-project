@@ -1,8 +1,8 @@
-com\backendguru\product\ProductEntity.class
-com\backendguru\product\ProductService.class
-com\backendguru\product\ProductApplication.class
-com\backendguru\product\ProductRepository.class
-com\backendguru\product\ProductController.class
-com\backendguru\product\ProductEntity$ProductEntityBuilder.class
-com\backendguru\product\NewProductRequest.class
-com\backendguru\product\ProductResponse.class
+com\hakancivelek\product\ProductEntity$ProductEntityBuilder.class
+com\hakancivelek\product\ProductRepository.class
+com\hakancivelek\product\ProductResponse.class
+com\hakancivelek\product\NewProductRequest.class
+com\hakancivelek\product\ProductService.class
+com\hakancivelek\product\ProductController.class
+com\hakancivelek\product\ProductEntity.class
+com\hakancivelek\product\ProductApplication.class

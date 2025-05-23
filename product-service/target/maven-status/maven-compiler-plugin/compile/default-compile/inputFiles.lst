@@ -1,7 +1,7 @@
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\NewProductRequest.java
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\ProductApplication.java
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\ProductController.java
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\ProductEntity.java
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\ProductRepository.java
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\ProductResponse.java
-D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\odev01-productservice-dockerize-etme-hakancivelek\product-service\src\main\java\com\backendguru\product\ProductService.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\NewProductRequest.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\ProductApplication.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\ProductController.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\ProductEntity.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\ProductRepository.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\ProductResponse.java
+D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\src\main\java\com\hakancivelek\product\ProductService.java
