@@ -1,4 +1,4 @@
-package com.hakancivelek.eureka.server.eureka_server;
+package com.hakancivelek.eureka.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

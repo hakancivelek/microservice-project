@@ -11,7 +11,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "products")
 @Data // Lombok: getter, setter, toString(), equals(), hashCode() üretir
 @NoArgsConstructor // Lombok: JPA tarafından proxy oluşturma için gereklidir
 @AllArgsConstructor // Lombok: Nesne oluşturmak için kullanışlıdır
