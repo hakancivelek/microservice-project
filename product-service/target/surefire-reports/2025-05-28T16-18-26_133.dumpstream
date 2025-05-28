@@ -1,0 +1,5 @@
+# Created at 2025-05-28T16:18:26.436
+Boot Manifest-JAR contains absolute paths in classpath 'D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\ecommerce-microservices\product-service\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

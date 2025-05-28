@@ -1,4 +1,4 @@
-package com.backendguru.product;
+package com.hakancivelek.product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,7 +8,10 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers
-@SpringBootTest
+@SpringBootTest(properties = {
+	"spring.cloud.discovery.enabled=false",
+	"spring.cloud.service-registry.auto-registration.enabled=false"
+})
 class ProductServiceApplicationTests {
 
 	@Container

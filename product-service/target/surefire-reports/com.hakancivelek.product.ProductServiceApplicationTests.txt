@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.hakancivelek.product.ProductServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.95 s -- in com.hakancivelek.product.ProductServiceApplicationTests
