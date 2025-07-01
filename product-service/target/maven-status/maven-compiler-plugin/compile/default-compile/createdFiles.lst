@@ -1,8 +1,0 @@
-com\hakancivelek\product\ProductEntity$ProductEntityBuilder.class
-com\hakancivelek\product\ProductRepository.class
-com\hakancivelek\product\ProductResponse.class
-com\hakancivelek\product\NewProductRequest.class
-com\hakancivelek\product\ProductService.class
-com\hakancivelek\product\ProductController.class
-com\hakancivelek\product\ProductEntity.class
-com\hakancivelek\product\ProductApplication.class
