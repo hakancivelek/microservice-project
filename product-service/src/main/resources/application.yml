@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: product-service
+
+  datasource:
+    url: jdbc:mysql://mysql-db:3306/productservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: start123
+    password: cokgizlisifre
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
