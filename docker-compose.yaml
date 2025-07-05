@@ -1,4 +1,9 @@
 services:
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+
   product-service:
     build: ./product-service
     ports:
@@ -11,6 +16,7 @@ services:
       - SPRING_JPA_DATABASE-PLATFORM=org.hibernate.dialect.MySQLDialect
     depends_on:
       - mysql-db
+      - eureka-server
 
   mysql-db:
     image: mysql:8.0
