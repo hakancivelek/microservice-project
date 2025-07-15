@@ -26,21 +26,6 @@ services:
       eureka-server:
         condition: service_healthy
 
-  mysql-db:
-    image: mysql:8.0
-    ports:
-      - "33061:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=cokgizlisifre
-      - MYSQL_DATABASE=productservicedb
-    volumes:
-      - mysql_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pcokgizlisifre"]
-      interval: 20s
-      timeout: 10s
-      retries: 10
-
   user-service:
     build: ./user-service
     ports:
@@ -57,6 +42,37 @@ services:
       eureka-server:
         condition: service_healthy
 
+  order-service:
+    build: ./order-service
+    ports:
+      - "8090:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db-3:3306/orderservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=cokgizlisifre
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_DATABASE-PLATFORM=org.hibernate.dialect.MySQLDialect
+    depends_on:
+      mysql-db-3:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+
+  mysql-db:
+    image: mysql:8.0
+    ports:
+      - "33061:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=cokgizlisifre
+      - MYSQL_DATABASE=productservicedb
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pcokgizlisifre"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+
   mysql-db-2:
     image: mysql:8.0
     ports:
@@ -72,6 +88,22 @@ services:
       timeout: 10s
       retries: 10
 
+  mysql-db-3:
+    image: mysql:8.0
+    ports:
+      - "33063:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=cokgizlisifre
+      - MYSQL_DATABASE=orderservicedb
+    volumes:
+      - mysql_data_3:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pcokgizlisifre" ]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+
 volumes:
   mysql_data:
   mysql_data_2:
+  mysql_data_3:
