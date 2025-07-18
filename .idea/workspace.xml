@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="update project: Docker Compose updated to work with only order-service">
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="register product-service with eureka-server">
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/NewOrderRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderEntity.java" afterDir="false" />
@@ -14,10 +13,7 @@
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/hakancivelek/product/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/hakancivelek/product/ProductServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +241,7 @@
       <workItem from="1752740504947" duration="11218000" />
       <workItem from="1752768316577" duration="2741000" />
       <workItem from="1752783034693" duration="1007000" />
-      <workItem from="1752818857824" duration="8521000" />
+      <workItem from="1752818857824" duration="17088000" />
     </task>
     <task id="LOCAL-00001" summary="&#9;&#10;added MySQL support to product-service">
       <option name="closed" value="true" />
@@ -335,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752751115050</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="register product-service with eureka-server">
+      <option name="closed" value="true" />
+      <created>1752832829723</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752832829723</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +368,7 @@
     <MESSAGE value="order-service initial commit" />
     <MESSAGE value="register order-service with eureka-server" />
     <MESSAGE value="update project: Docker Compose updated to work with only order-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project: Docker Compose updated to work with only order-service" />
+    <MESSAGE value="register product-service with eureka-server" />
+    <option name="LAST_COMMIT_MESSAGE" value="register product-service with eureka-server" />
   </component>
 </project>

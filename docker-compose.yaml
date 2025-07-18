@@ -54,5 +54,48 @@ services:
         max_attempts: 3
         window: 120s
 
+  user-service:
+    build: ./user-service
+    ports:
+      - "8089:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db-2:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=cokgizlisifre
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_DATABASE-PLATFORM=org.hibernate.dialect.MySQLDialect
+    depends_on:
+      mysql-db-2:
+        condition: service_healthy
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+  mysql-db-2:
+    image: mysql:8.0
+    ports:
+      - "33062:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=cokgizlisifre
+      - MYSQL_DATABASE=userservicedb
+    volumes:
+      - mysql_data_1:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pcokgizlisifre" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
 volumes:
   mysql_data:
+  mysql_data_1:
