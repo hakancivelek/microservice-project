@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="user-service is already registered with eureka-server.  &#10;However, it only compiles successfully when running `./mvnw clean package -DskipTests`.  &#10;Investigate and resolve the underlying issue as soon as possible.">
+    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="user-service database doesn't need -DskipTests anymore. Now it's need docker for compiling">
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/NewOrderRequest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/hakancivelek/order/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/java/com/hakancivelek/user/service/UserServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/java/com/hakancivelek/user/service/UserServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,44 +61,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ProductServiceApplicationTests.executor": "Run",
-    "JUnit.UserServiceApplicationTests (1).executor": "Run",
-    "JUnit.UserServiceApplicationTests.executor": "Run",
-    "Maven.eureka-server [clean,install].executor": "Run",
-    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "Database connection parameters found",
-    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.EurekaServerApplication.executor": "Debug",
-    "Spring Boot.ProductApplication.executor": "Debug",
-    "Spring Boot.UserServiceApplication (1).executor": "Debug",
-    "Spring Boot.UserServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/_Yazilim/Backend GURU/Spring Boot 3-Cloud ile Mikrosevis Mimarisi/practices/microservice-project/eureka-server/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ProductServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceApplicationTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eureka-server [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;Database connection parameters found&quot;,
+    &quot;Notification.DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ProductApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.UserServiceApplication (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/_Yazilim/Backend GURU/Spring Boot 3-Cloud ile Mikrosevis Mimarisi/practices/microservice-project/eureka-server/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -240,7 +243,8 @@
       <workItem from="1752740504947" duration="11218000" />
       <workItem from="1752768316577" duration="2741000" />
       <workItem from="1752783034693" duration="1007000" />
-      <workItem from="1752818857824" duration="17778000" />
+      <workItem from="1752818857824" duration="20281000" />
+      <workItem from="1752937944644" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="&#9;&#10;added MySQL support to product-service">
       <option name="closed" value="true" />
@@ -346,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752846011133</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rename user-service database and update DB container name to mysql-db-1">
+      <option name="closed" value="true" />
+      <created>1752846546477</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1752846546477</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,6 +389,8 @@
     <MESSAGE value="update project: Docker Compose updated to work with only order-service" />
     <MESSAGE value="register product-service with eureka-server" />
     <MESSAGE value="user-service is already registered with eureka-server.  &#10;However, it only compiles successfully when running `./mvnw clean package -DskipTests`.  &#10;Investigate and resolve the underlying issue as soon as possible." />
-    <option name="LAST_COMMIT_MESSAGE" value="user-service is already registered with eureka-server.  &#10;However, it only compiles successfully when running `./mvnw clean package -DskipTests`.  &#10;Investigate and resolve the underlying issue as soon as possible." />
+    <MESSAGE value="Rename user-service database and update DB container name to mysql-db-1" />
+    <MESSAGE value="user-service database doesn't need -DskipTests anymore. Now it's need docker for compiling" />
+    <option name="LAST_COMMIT_MESSAGE" value="user-service database doesn't need -DskipTests anymore. Now it's need docker for compiling" />
   </component>
 </project>
