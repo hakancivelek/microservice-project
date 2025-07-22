@@ -11,9 +11,9 @@ MYSQL_IMAGE_ID=$(docker images mysql:8.0 --format "{{.ID}}")
 docker images -q | grep -v "$MYSQL_IMAGE_ID" | xargs -r docker rmi -f
 
 # 4. Clean up unused volumes
-docker volume prune -f
+# docker volume prune -f
 
 # 5. Clean up all volumes
-# docker volume ls -q | xargs -r docker volume rm -f
+ docker volume ls -q | xargs -r docker volume rm -f
 
 echo "Only the MySQL image remains; containers have been removed, and unused volumes have been cleaned."
