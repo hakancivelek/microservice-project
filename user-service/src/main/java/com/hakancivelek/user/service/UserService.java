@@ -93,6 +93,5 @@ public class UserService {
         UserEntity user = userRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
         userRepository.delete(user);
-
     }
 }
