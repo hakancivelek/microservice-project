@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="product's pom.xml fixed">
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/hakancivelek/api/gateway/RouteConfiguration.java" afterDir="false" />
+    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="add fluent API-style route configuration for product-service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/hakancivelek/api/gateway/RouteConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/hakancivelek/api/gateway/RouteConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +271,8 @@
       <workItem from="1753177114536" duration="18628000" />
       <workItem from="1753202945879" duration="4223000" />
       <workItem from="1753341752217" duration="3817000" />
-      <workItem from="1753354385968" duration="8635000" />
+      <workItem from="1753354385968" duration="9118000" />
+      <workItem from="1753522537174" duration="9910000" />
     </task>
     <task id="LOCAL-00001" summary="&#9;&#10;added MySQL support to product-service">
       <option name="closed" value="true" />
@@ -432,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753207092794</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="add fluent API-style route configuration for product-service">
+      <option name="closed" value="true" />
+      <created>1753387527640</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1753387527640</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,6 +480,7 @@
     <MESSAGE value="order-service CRUD methods completed" />
     <MESSAGE value="api-gateway initialized and tested for one request" />
     <MESSAGE value="product's pom.xml fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="product's pom.xml fixed" />
+    <MESSAGE value="add fluent API-style route configuration for product-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fluent API-style route configuration for product-service" />
   </component>
 </project>
