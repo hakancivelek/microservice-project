@@ -17,7 +17,8 @@ public class RouteConfiguration {
                                 .filters(f ->
                                         f.rewritePath("/web/?(?<segment>.*)", "/v1/$\\{segment}")
                                                 .removeResponseHeader("Date"))
-                                .uri("http://product-service:8080")
+                                .uri("http://PRODUCT-SERVICE:8080")     // For api gateway
+//                                .uri("http://product-service:8080")   // For docker-compose
                 )
 
                 // User Service Route
@@ -25,13 +26,15 @@ public class RouteConfiguration {
                         r.path("/api/users/**")
                                 .filters(f ->
                                         f.removeResponseHeader("Date"))
-                                .uri("http://user-service:8080")
+                                .uri("http://USER-SERVICE:8080")   // For api gateway
+//                                .uri("http://user-service:8080") // For docker-compose
                 )
 
                 // Order Service Route
                 .route(r ->
                         r.path("/v1/orders/**")
-                                .uri("http://order-service:8080")
+                                .uri("http://ORDER-SERVICE:8080")   // For api gateway
+//                                .uri("http://order-service:8080") // For docker-compose
                 )
                 .build();
     }
