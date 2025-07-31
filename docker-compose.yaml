@@ -30,8 +30,8 @@ services:
 
   product-service:
     build: ./product-service
-      #ports:
-    #- "8088:8080"
+    ports:
+    - "8088:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/productservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
@@ -50,8 +50,8 @@ services:
 
   user-service:
     build: ./user-service
-    #ports:
-    #- "8089:8080"
+    ports:
+    - "8089:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
@@ -70,8 +70,8 @@ services:
 
   order-service:
     build: ./order-service
-    #ports:
-    #- "8090:8080"
+    ports:
+    - "8090:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/orderservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root

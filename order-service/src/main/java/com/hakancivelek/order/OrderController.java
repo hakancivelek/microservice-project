@@ -1,5 +1,6 @@
 package com.hakancivelek.order;
 
+import com.hakancivelek.order.user.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -42,5 +43,11 @@ public class OrderController {
     public ResponseEntity<Void> deleteOrderById(@PathVariable Long id) {
         orderService.deleteOrderById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    //Just for test!
+    @GetMapping("/users")
+    public ResponseEntity<List<UserResponse>> getAllUsersFromOrderService() {
+        return ResponseEntity.ok(orderService.getAllUsersFromOrderService());
     }
 }
