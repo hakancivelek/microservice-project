@@ -1,5 +1,6 @@
 package com.hakancivelek.user.service;
 
+import com.hakancivelek.user.service.domain.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,4 +30,10 @@ public class UserEntity {
 
     private String lastName;
 
+    public static UserEntity fromDomain(User user) {
+        return UserEntity.builder()
+                .email(user.getEmail().getValue())
+                .passwordHash(user.getPassword().getHashedValue())
+                .build();
+    }
 }

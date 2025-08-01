@@ -1,7 +1,11 @@
 package com.hakancivelek.user.service;
 
+import com.hakancivelek.user.service.domain.Email;
+import com.hakancivelek.user.service.domain.Password;
 import com.hakancivelek.user.service.ex.UserAlreadyExistsException;
 import com.hakancivelek.user.service.ex.UserCreationException;
+import com.hakancivelek.user.service.model.NewUserRequest;
+import com.hakancivelek.user.service.model.UserResponse;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +26,8 @@ public class UserService {
                 .orElseThrow(() -> new NoSuchElementException("User not found with id: " + userId));
 
         return new UserResponse(
-                userEntity.getId(),
                 userEntity.getUsername(),
                 userEntity.getEmail(),
-                userEntity.getPasswordHash(),
                 userEntity.getFirstName(),
                 userEntity.getLastName()
         );
@@ -36,10 +38,8 @@ public class UserService {
 
         List<UserResponse> userResponses = users.stream()
                 .map(user -> new UserResponse(
-                        user.getId(),
                         user.getUsername(),
                         user.getEmail(),
-                        user.getPasswordHash(),
                         user.getFirstName(),
                         user.getLastName()
                 ))
@@ -48,22 +48,19 @@ public class UserService {
         return userResponses;
     }
 
-    public UserResponse createUser(NewUserRequest newUserRequest) {
+    public UserResponse registerUser(NewUserRequest newUserRequest) {
         try {
-            if (userRepository.existsByUsername(newUserRequest.username())) {
-                throw new UserAlreadyExistsException("Username already exists: " + newUserRequest.username());
-            }
 
             if (userRepository.existsByEmail(newUserRequest.email())) {
                 throw new UserAlreadyExistsException("Email already exists: " + newUserRequest.email());
             }
 
+            Email email = new Email(newUserRequest.email());
+            Password password = new Password(newUserRequest.password());
+
             UserEntity userEntity = new UserEntity();
-            userEntity.setUsername(newUserRequest.username());
             userEntity.setEmail(newUserRequest.email());
-            userEntity.setPasswordHash(newUserRequest.passwordHash());
-            userEntity.setFirstName(newUserRequest.firstName());
-            userEntity.setLastName(newUserRequest.lastName());
+            userEntity.setPasswordHash(newUserRequest.password());
 
             UserEntity savedUser = userRepository.save(userEntity);
 
@@ -80,10 +77,8 @@ public class UserService {
 
     private UserResponse mapToUserResponse(UserEntity userEntity) {
         return new UserResponse(
-                userEntity.getId(),
                 userEntity.getUsername(),
                 userEntity.getEmail(),
-                userEntity.getPasswordHash(),
                 userEntity.getFirstName(),
                 userEntity.getLastName()
         );

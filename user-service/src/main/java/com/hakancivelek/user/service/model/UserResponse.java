@@ -1,10 +1,8 @@
-package com.hakancivelek.user.service;
+package com.hakancivelek.user.service.model;
 
 public record UserResponse(
-        Long id,
         String username,
         String email,
-        String passwordHash,
         String firstName,
         String lastName
 ) {

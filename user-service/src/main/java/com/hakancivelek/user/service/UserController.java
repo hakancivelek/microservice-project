@@ -1,5 +1,7 @@
 package com.hakancivelek.user.service;
 
+import com.hakancivelek.user.service.model.NewUserRequest;
+import com.hakancivelek.user.service.model.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +34,8 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserResponse> createUser(@RequestBody NewUserRequest newUserRequest) {
-        UserResponse createdUser = userService.createUser(newUserRequest);
+    public ResponseEntity<UserResponse> registerUser(@RequestBody NewUserRequest newUserRequest) {
+        UserResponse createdUser = userService.registerUser(newUserRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
 
