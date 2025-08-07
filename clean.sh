@@ -40,16 +40,9 @@ docker rm elasticsearch kibana logstash 2>/dev/null || true
 
 echo "Cleaning up volumes..."
 
-# 5. Only remove the es_data volume (preserve mysql_data)
+# 5. Remove both es_data and mysql_data volumes
 docker volume rm -f microservice-project_es_data 2>/dev/null || true
-
-# 6. Preserve MySQL volume, just remove old containers using it
-mysql_containers=$(docker ps -aq --filter volume=microservice-project_mysql_data 2>/dev/null)
-if [ ! -z "$mysql_containers" ]; then
-  echo "Cleaning containers using MySQL volume: $mysql_containers"
-  docker stop $mysql_containers 2>/dev/null || true
-  docker rm $mysql_containers 2>/dev/null || true
-fi
+docker volume rm -f microservice-project_mysql_data 2>/dev/null || true
 
 echo "Cleanup completed!"
 echo "Removed images:"
@@ -59,10 +52,9 @@ echo "- microservice-project_user-service:latest"
 echo "- microservice-project_order-service:latest"
 echo "- microservice-project_eureka-server:latest"
 echo ""
-echo "Cleaned/preserved resources:"
+echo "Cleaned resources:"
 echo "- ELK Stack images preserved (elasticsearch, kibana, logstash)"
-echo "- MySQL image preserved"
 echo "- microservice-project_es_data volume removed"
-echo "- microservice-project_mysql_data volume preserved"
+echo "- microservice-project_mysql_data volume removed"
 echo ""
 echo "You can now safely start the project using 'docker-compose up'"

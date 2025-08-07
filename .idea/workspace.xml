@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="unified DB containers, added init script, and implemented inter-service communication with CircuitBreaker">
-      <change afterPath="$PROJECT_DIR$/logstash/pipeline/logstash.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -491,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753989240770</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!">
+      <option name="closed" value="true" />
+      <created>1754585422523</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1754585422523</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&#9;&#10;added MySQL support to product-service" />
     <MESSAGE value="eureka client added. It's not implemented to product-service yet" />
     <MESSAGE value="eureka-server implemented for product microservice" />
     <MESSAGE value="user-service initialization commit" />
@@ -534,7 +534,8 @@
     <MESSAGE value="Created separate databases and users for each service with proper privileges" />
     <MESSAGE value="init.sql added" />
     <MESSAGE value="unified DB containers, added init script, and implemented inter-service communication with CircuitBreaker" />
-    <option name="LAST_COMMIT_MESSAGE" value="unified DB containers, added init script, and implemented inter-service communication with CircuitBreaker" />
+    <MESSAGE value="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
