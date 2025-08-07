@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="unified DB containers, added init script, and implemented inter-service communication with CircuitBreaker">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/domain/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/domain/Password.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/domain/Privilege.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/domain/ProfileInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/domain/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logstash/pipeline/logstash.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/NewUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/model/NewUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/model/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/hakancivelek/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +112,7 @@
       <recent name="D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\microservice-project\order-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/order-service/src/main/resources" />
       <recent name="D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\microservice-project\user-service\src\test\java\com\hakancivelek\user\service" />
       <recent name="D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\microservice-project\user-service\src\main\java\com\hakancivelek\user\service" />
     </key>
