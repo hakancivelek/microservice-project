@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: order-service
+
+  sql:
+    init:
+      mode: always
+
+  datasource:
+    username: orderdbuser
+    url: jdbc:mysql://mysql-db:3306/orderservicedb
+    password: cokgizlisifre
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers
+
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      get-user-CB:
+#        slidingWindowSize: 5
+#        minimumNumberOfCalls: 5
+#        failureRateThreshold: 50
+#        waitDurationInOpenState: 10s
+#        permittedNumberOfCallsInHalfOpenState: 2
+#        automaticTransitionFromOpenToHalfOpenEnabled: true

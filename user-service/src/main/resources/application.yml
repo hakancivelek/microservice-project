@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: user-service
+
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  datasource:
+    username: userdbuser
+    url: jdbc:mysql://mysql-db:3306/userservicedb
+    password: cokgizlisifre
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
