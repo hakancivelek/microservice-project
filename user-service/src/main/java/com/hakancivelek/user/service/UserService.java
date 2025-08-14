@@ -4,6 +4,7 @@ import com.hakancivelek.user.service.domain.Email;
 import com.hakancivelek.user.service.domain.Password;
 import com.hakancivelek.user.service.ex.UserAlreadyExistsException;
 import com.hakancivelek.user.service.ex.UserCreationException;
+import com.hakancivelek.user.service.ex.UserNotFoundException;
 import com.hakancivelek.user.service.model.NewUserRequest;
 import com.hakancivelek.user.service.model.UserResponse;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -23,7 +24,7 @@ public class UserService {
 
     public UserResponse getUserById(Long userId) {
         UserEntity userEntity = userRepository.findById(userId)
-                .orElseThrow(() -> new NoSuchElementException("User not found with id: " + userId));
+                .orElseThrow(() -> new UserNotFoundException("User with id " + userId + " doesn't exist"));
 
         return new UserResponse(
                 userEntity.getUsername(),

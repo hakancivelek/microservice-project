@@ -13,8 +13,8 @@ public class ProductClientFacade {
 
     private final ProductClientService productClientService;
 
-    public ProductClientFacade() {
-        RestClient restClient = RestClient.builder().baseUrl("http://product-service:8080/").build();
+    public ProductClientFacade(RestClient.Builder restClientBuilder) {
+        RestClient restClient = restClientBuilder.baseUrl("http://product-service:8080/").build();
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
 
@@ -37,12 +37,12 @@ public class ProductClientFacade {
     private ProductResponse fallbackRuntimeException(Long productId, RuntimeException runtimeException) {
         System.out.println("ProductResponse Circuit breaker fallback activated");
         System.out.println("ProductResponse Fallback RuntimeException :" + runtimeException);
-        return new ProductResponse(0L, "dummy-product", "lorem ipsum", BigDecimal.ZERO,10);
+        return new ProductResponse(0L, "dummy-product", "lorem ipsum", BigDecimal.ZERO, 10);
     }
 
     private ProductResponse fallbackRuntimeException(Long productId, Throwable throwable) {
         System.out.println("ProductResponse Circuit breaker fallback activated");
         System.out.println("ProductResponse Fallback Throwable :" + throwable);
-        return new ProductResponse(-1L, "dummy-product", "lorem ipsum", BigDecimal.ONE.negate(),20);
+        return new ProductResponse(-1L, "dummy-product", "lorem ipsum", BigDecimal.ONE.negate(), 20);
     }
 }
