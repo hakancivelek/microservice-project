@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment=".properties updated to yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logstash/pipeline/logstash.conf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,10 +84,10 @@
     "Spring Boot.ProductApplication.executor": "Debug",
     "Spring Boot.UserServiceApplication (1).executor": "Debug",
     "Spring Boot.UserServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "elk__again",
+    "git-widget-placeholder": "zipkin__implementation",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/hakan/PC/Software/Backend GURU/Spring Boot 3-Cloud ile Mikrosevis Mimarisi/practices/microservice-project",
+    "last_opened_file_path": "/home/hakan/PC/Software/Backend GURU/Spring Giris/spring-demo-project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -298,6 +295,9 @@
       <workItem from="1753991940101" duration="2000" />
       <workItem from="1753993469340" duration="1000" />
       <workItem from="1754034907877" duration="12712000" />
+      <workItem from="1755070301716" duration="672000" />
+      <workItem from="1755077708275" duration="106000" />
+      <workItem from="1755088779619" duration="553000" />
     </task>
     <task id="LOCAL-00001" summary="&#9;&#10;added MySQL support to product-service">
       <option name="closed" value="true" />
