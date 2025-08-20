@@ -2,6 +2,61 @@ version: '3.8'
 
 services:
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1G -Xmx1G
+    ulimits:
+      memlock: { soft: -1, hard: -1 }
+    ports:
+      - "9200:9200"
+    volumes:
+      - /home/hakan/Logs/es_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "curl -fs http://localhost:9200/_cluster/health | grep -E '\"status\":\"(yellow|green)\"'"
+      ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.13.4
+    container_name: logstash
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+    environment:
+      - LS_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+    #  - es_data:/usr/share/elasticsearch/data
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -s -f http://localhost:9600 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.13.4
+    container_name: kibana
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+
   zipkin:
     image: openzipkin/zipkin:3.4
     container_name: zipkin
@@ -20,6 +75,9 @@ services:
     build: ./api-gateway
     ports:
       - "9080:8080"
+    environment:
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
     healthcheck:
       test: [ "CMD-SHELL", "curl -f http://localhost:8080/actuator/health" ]
       interval: 30s
@@ -30,22 +88,29 @@ services:
       - user-service
       - product-service
       - order-service
+      - logstash
 
   eureka-server:
     build: ./eureka-server
     ports:
       - "8761:8761"
+    environment:
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8761/actuator/health"]
       interval: 30s
       timeout: 10s
       retries: 5
       start_period: 30s
+    depends_on:
+      logstash:
+        condition: service_healthy
 
   product-service:
     build: ./product-service
     ports:
-    - "8088:8080"
+      - "8088:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/productservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
@@ -53,12 +118,16 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_JPA_DATABASE-PLATFORM=org.hibernate.dialect.MySQLDialect
       - MANAGEMENT_ZIPKIN_TRACING_ENDPOINT=http://zipkin:9411/api/v2/spans
-      - OPENTELEMETRY_SERVICE_NAME=user-service
+      - OPENTELEMETRY_SERVICE_NAME=product-service
       - MANAGEMENT_TRACING_SAMPLING_PROBABILITY=1.0
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
     depends_on:
       mysql-db:
         condition: service_healthy
       zipkin:
+        condition: service_healthy
+      logstash:
         condition: service_healthy
     deploy:
       restart_policy:
@@ -70,7 +139,7 @@ services:
   user-service:
     build: ./user-service
     ports:
-    - "8089:8080"
+      - "8089:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/userservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
@@ -80,12 +149,15 @@ services:
       - MANAGEMENT_ZIPKIN_TRACING_ENDPOINT=http://zipkin:9411/api/v2/spans
       - OPENTELEMETRY_SERVICE_NAME=user-service
       - MANAGEMENT_TRACING_SAMPLING_PROBABILITY=1.0
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
     depends_on:
       mysql-db:
         condition: service_healthy
       zipkin:
         condition: service_healthy
-
+      logstash:
+        condition: service_healthy
     deploy:
       restart_policy:
         condition: on-failure
@@ -96,7 +168,7 @@ services:
   order-service:
     build: ./order-service
     ports:
-    - "8090:8080"
+      - "8090:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/orderservicedb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
@@ -106,10 +178,14 @@ services:
       - MANAGEMENT_ZIPKIN_ENDPOINT=http://zipkin:9411/api/v2/spans
       - OPENTELEMETRY_SERVICE_NAME=order-service
       - MANAGEMENT_TRACING_SAMPLING_PROBABILITY=1.0
+      - LOGSTASH_HOST=logstash
+      - LOGSTASH_PORT=5000
     depends_on:
       mysql-db:
         condition: service_healthy
       zipkin:
+        condition: service_healthy
+      logstash:
         condition: service_healthy
     deploy:
       restart_policy:
@@ -143,3 +219,4 @@ services:
 
 volumes:
   mysql_data:
+ # es_data:

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment=".properties updated to yml">
+    <list default="true" id="92f11ead-c91d-466a-b54e-91001c32c600" name="Changes" comment="clean.sh updated">
+      <change afterPath="$PROJECT_DIR$/logstash/pipeline/logstash.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,10 +88,10 @@
     "Spring Boot.ProductApplication.executor": "Debug",
     "Spring Boot.UserServiceApplication (1).executor": "Debug",
     "Spring Boot.UserServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "zipkin__implementation",
+    "git-widget-placeholder": "elk-integration",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/hakan/PC/Software/Backend GURU/Spring Giris/spring-demo-project",
+    "last_opened_file_path": "/home/hakan/PC/Software/Backend GURU/Spring Boot 3-Cloud ile Mikrosevis Mimarisi/practices/microservice-project/product-service/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,11 +112,11 @@
       <recent name="com.hakancivelek.order" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/product-service/src/main/resources" />
       <recent name="$PROJECT_DIR$/api-gateway" />
       <recent name="$PROJECT_DIR$/api-gateway/src" />
       <recent name="$PROJECT_DIR$/order-service" />
       <recent name="D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\microservice-project\eureka-server\src\main\resources" />
-      <recent name="D:\_Yazilim\Backend GURU\Spring Boot 3-Cloud ile Mikrosevis Mimarisi\practices\microservice-project\order-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/order-service/src/main/resources" />
@@ -507,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754585422523</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="clean.sh updated">
+      <option name="closed" value="true" />
+      <created>1755675373044</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1755675373044</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="eureka client added. It's not implemented to product-service yet" />
     <MESSAGE value="eureka-server implemented for product microservice" />
     <MESSAGE value="user-service initialization commit" />
     <MESSAGE value="added to dockerFile and one service method to user-service" />
@@ -550,7 +561,8 @@
     <MESSAGE value="init.sql added" />
     <MESSAGE value="unified DB containers, added init script, and implemented inter-service communication with CircuitBreaker" />
     <MESSAGE value="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ELK stack integration for Order Service logging&#10;and clean.sh updated!" />
+    <MESSAGE value="clean.sh updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean.sh updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
