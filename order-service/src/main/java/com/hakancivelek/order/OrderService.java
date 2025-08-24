@@ -4,6 +4,8 @@ import com.hakancivelek.order.product.ProductClientFacade;
 import com.hakancivelek.order.product.ProductResponse;
 import com.hakancivelek.order.user.UserClientFacade;
 import com.hakancivelek.order.user.UserResponse;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,11 +17,13 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final ProductClientFacade productClientFacade;
     private final UserClientFacade userClientFacade;
+    private final MeterRegistry meterRegistry;
 
-    public OrderService(OrderRepository orderRepository, ProductClientFacade productClientFacade, UserClientFacade userClientFacade) {
+    public OrderService(OrderRepository orderRepository, ProductClientFacade productClientFacade, UserClientFacade userClientFacade, MeterRegistry meterRegistry) {
         this.orderRepository = orderRepository;
         this.productClientFacade = productClientFacade;
         this.userClientFacade = userClientFacade;
+        this.meterRegistry = meterRegistry;
     }
 
     public List<OrderResponse> getAllOrders() {
@@ -42,15 +46,19 @@ public class OrderService {
                 .orElseThrow(() -> new RuntimeException("Order not found with id: " + id));
     }
 
-    public OrderResponse createOrder(NewOrderRequest order) {
-        checkProduct(order);
-        checkUser(order);
+    public OrderResponse createOrder(NewOrderRequest newOrderRequest) {
+        checkProduct(newOrderRequest);
+        checkUser(newOrderRequest);
 
         var orderEntity = new OrderEntity();
-        orderEntity.setQuantity(order.quantity());
-        orderEntity.setProductId(order.productId());
-        orderEntity.setUserId(order.userId());
-        return toResponse(orderRepository.save(orderEntity));
+        orderEntity.setQuantity(newOrderRequest.quantity());
+        orderEntity.setProductId(newOrderRequest.productId());
+        orderEntity.setUserId(newOrderRequest.userId());
+        OrderEntity order = orderRepository.save(orderEntity);
+
+        Counter counter = meterRegistry.counter("orders.placed", "userId", orderEntity.getUserId().toString());
+        counter.increment();
+        return toResponse(order);
     }
 
     public void deleteOrderById(Long id) {
@@ -69,7 +77,7 @@ public class OrderService {
     private void checkUser(NewOrderRequest req) {
         UserResponse user = userClientFacade.getUser(req.userId());
         if (user.username().equals("0") || user.username().equals("-1")) {
-            System.out.println("checkUser username: "  + user.username());
+            System.out.println("checkUser username: " + user.username());
             throw new RuntimeException("checkUser User not found");
         }
     }
