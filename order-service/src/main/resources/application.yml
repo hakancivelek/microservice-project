@@ -34,7 +34,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,traces
+        include: health,info,metrics,traces,circuitbreakers,prometheus
 
 logging:
   pattern:
